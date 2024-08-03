@@ -5,6 +5,8 @@
  */
 package com.MDI;
 
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author tejas
@@ -27,26 +29,39 @@ public class Form1 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnnext = new javax.swing.JButton();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setPreferredSize(new java.awt.Dimension(900, 700));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1034, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 667, Short.MAX_VALUE)
-        );
+        btnnext.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnnext.setText("Next");
+        btnnext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnnextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 113, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnextActionPerformed
+        // TODO add your handling code here:
+        JDesktopPane pane = getDesktopPane();
+        Form2 ob = new Form2();
+        pane.add(ob);
+        ob.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btnnextActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnnext;
     // End of variables declaration//GEN-END:variables
 }

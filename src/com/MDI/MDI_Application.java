@@ -5,17 +5,20 @@
  */
 package com.MDI;
 
+import java.awt.Color;
+
 /**
  *
  * @author tejas
  */
-public class MDISampleForm extends javax.swing.JFrame {
+public class MDI_Application extends javax.swing.JFrame {
 
     /**
      * Creates new form MDISampleForm
      */
-    public MDISampleForm() {
+    public MDI_Application() {
         initComponents();
+        
     }
 
     /**
@@ -71,6 +74,11 @@ public class MDISampleForm extends javax.swing.JFrame {
         form3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, java.awt.event.InputEvent.CTRL_MASK));
         form3.setMnemonic('a');
         form3.setText("Form3");
+        form3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                form3ActionPerformed(evt);
+            }
+        });
         fileMenu.add(form3);
 
         exitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
@@ -125,15 +133,17 @@ public class MDISampleForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -145,12 +155,24 @@ public class MDISampleForm extends javax.swing.JFrame {
 
     private void form2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_form2ActionPerformed
         // TODO add your handling code here:
+        Form2 ob =  new Form2();
+        desktopPane.add(ob);
+        ob.setVisible(true);
     }//GEN-LAST:event_form2ActionPerformed
 
     private void form1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_form1ActionPerformed
         // TODO add your handling code here:
-        
+        Form1 ob =  new Form1();
+        desktopPane.add(ob);
+        ob.setVisible(true);
     }//GEN-LAST:event_form1ActionPerformed
+
+    private void form3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_form3ActionPerformed
+        // TODO add your handling code here:
+        Form3 ob =  new Form3();
+        desktopPane.add(ob);
+        ob.setVisible(true);
+    }//GEN-LAST:event_form3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,20 +191,21 @@ public class MDISampleForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MDISampleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDI_Application.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MDISampleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDI_Application.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MDISampleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDI_Application.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MDISampleForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDI_Application.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MDISampleForm().setVisible(true);
+                new MDI_Application().setVisible(true);
             }
         });
     }

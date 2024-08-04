@@ -342,7 +342,7 @@ public class EmpSalaryInfo extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println("Ex: "+ex.getMessage());
         }
-        Clear();
+       
     }//GEN-LAST:event_btnsaveActionPerformed
 
     private void btnnewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnewActionPerformed
@@ -363,6 +363,17 @@ public class EmpSalaryInfo extends javax.swing.JFrame {
                 } catch (Exception ex) {
                     System.out.println("Ex: "+ex.getMessage());
                 }
+        txtname.setText(" ");
+        txtbs.setText(" ");
+        designation.setSelectedIndex(0);
+        txthra.setText(" ");
+        txtda.setText(" ");
+        txtta.setText(" ");
+        txtpf.setText(" ");
+        txtit.setText(" ");
+        txtns.setText(" ");
+        txtgs.setText(" ");
+                
     }//GEN-LAST:event_btnnewActionPerformed
 
     private void btnupadateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupadateActionPerformed
